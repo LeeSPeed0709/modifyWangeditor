@@ -3085,30 +3085,6 @@ function getPasteHtml(e, filterStyle, ignoreImg) {
 }
 
 // 获取粘贴的图片文件
-function getPasteImgs(e) {
-    var result = [];
-    var txt = getPasteText(e);
-    if (txt) {
-        // 有文字，就忽略图片
-        return result;
-    }
-
-    var clipboardData = e.clipboardData || e.originalEvent && e.originalEvent.clipboardData || {};
-    var items = clipboardData.items;
-
-    if (!items) {
-        return result;
-    }
-
-    // objForEach(items, (key, value) => {
-    //     const type = value.type
-    //     if (/image/i.test(type)) {
-    //         result.push(value.getAsFile())
-    //     }
-    // })
-
-    return result;
-}
 
 /*
     编辑区域
@@ -3540,10 +3516,10 @@ Text.prototype = {
             }
 
             // 获取粘贴的图片
-            var pasteFiles = getPasteImgs(e);
-            if (!pasteFiles || !pasteFiles.length) {
-                return;
-            }
+            // const pasteFiles = getPasteImgs(e)
+            // if (!pasteFiles || !pasteFiles.length) {
+            //     return
+            // }
 
             // 获取当前的元素
             var $selectionElem = editor.selection.getSelectionContainerElem();

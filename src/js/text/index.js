@@ -433,10 +433,10 @@ Text.prototype = {
             }
 
             // 获取粘贴的图片
-            const pasteFiles = getPasteImgs(e)
-            if (!pasteFiles || !pasteFiles.length) {
-                return
-            }
+            // const pasteFiles = getPasteImgs(e)
+            // if (!pasteFiles || !pasteFiles.length) {
+            //     return
+            // }
 
             // 获取当前的元素
             const $selectionElem = editor.selection.getSelectionContainerElem()
