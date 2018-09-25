@@ -3553,8 +3553,8 @@ Text.prototype = {
             }
 
             // 上传图片
-            var uploadImg = editor.uploadImg;
-            uploadImg.uploadImg(pasteFiles);
+            // var uploadImg = editor.uploadImg;
+            // uploadImg.uploadImg(pasteFiles);
         });
     },
 

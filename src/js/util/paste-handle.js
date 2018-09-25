@@ -76,16 +76,17 @@ export function getPasteImgs(e) {
 
     const clipboardData = e.clipboardData || (e.originalEvent && e.originalEvent.clipboardData) || {}
     const items = clipboardData.items
+    
     if (!items) {
         return result
     }
 
-    objForEach(items, (key, value) => {
-        const type = value.type
-        if (/image/i.test(type)) {
-            result.push(value.getAsFile())
-        }
-    })
+    // objForEach(items, (key, value) => {
+    //     const type = value.type
+    //     if (/image/i.test(type)) {
+    //         result.push(value.getAsFile())
+    //     }
+    // })
 
     return result
 }
