@@ -451,8 +451,8 @@ Text.prototype = {
             }
 
             // 上传图片
-            const uploadImg = editor.uploadImg
-            uploadImg.uploadImg(pasteFiles)
+            // const uploadImg = editor.uploadImg
+            // uploadImg.uploadImg(pasteFiles)
         })
     },
 

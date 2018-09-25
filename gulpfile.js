@@ -104,19 +104,13 @@ gulp.task('script', () => {
 
 // 默认任务配置
 gulp.task('default', () => {
-    gulp.run('copy-fonts', 'css', 'script')
+    // gulp.run('copy-fonts', 'css', 'script')
 
     // 监听 js 原始文件的变化
-    gulp.watch('./src/js/**/*.js', () => {
-        gulp.run('script')
-    })
+    gulp.watch('./src/js/**/*.js', gulp.series('script'))
     // 监听 css 原始文件的变化
-    gulp.watch('./src/less/**/*.less', () => {
-        gulp.run('css', 'script')
-    })
+    gulp.watch('./src/less/**/*.less', gulp.series('css', 'script'))
     // 监听 icon.less 的变化，变化时重新拷贝 fonts 文件
-    gulp.watch('./src/less/icon.less', () => {
-        gulp.run('copy-fonts')
-    })
+    gulp.watch('./src/less/icon.less', gulp.series('copy-fonts'))
 })
 
