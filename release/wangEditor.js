@@ -4016,8 +4016,12 @@ UploadImg.prototype = {
         }
     },
 
-    // 根据链接插入图片
-    insertLinkImg: function insertLinkImg(link) {
+    /**
+     * 根据链接插入图片
+     * @param {string} link 图片链接 
+     * @param {string} noWatermarkLink 不带水印图片链接(可选)
+     */
+    insertLinkImg: function insertLinkImg(link, noWatermarkLink) {
         var _this2 = this;
 
         if (!link) {
@@ -4038,7 +4042,11 @@ UploadImg.prototype = {
             }
         }
 
-        editor.cmd.do('insertHTML', '<img src="' + link + '" style="max-width:100%;"/>');
+        if (noWatermarkLink) {
+            editor.cmd.do('insertHTML', '<img src="' + link + '" _hdsrc="' + noWatermarkLink + '" style="max-width:100%;"/>');
+        } else {
+            editor.cmd.do('insertHTML', '<img src="' + link + '" style="max-width:100%;"/>');
+        }
 
         // 验证图片 url 是否有效，无效的话给出提示
         var img = document.createElement('img');
